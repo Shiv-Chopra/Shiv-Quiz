@@ -69,3 +69,85 @@ questions = [
         ],
         "correct": "Keeping a surfer warm"
     },
+
+    "Intermediate": [
+        { 
+            "text": "Which factor can affect the quality of waves at a surf break?",
+            "options": [
+                "Wind direction and swell",
+                "The colour of the surfboard",
+                "The surfer's shoes",
+                "The time shown on a phone"
+            ],
+            "answer": "Wind direction and swell",
+            "explanation": "Swell and wind conditions can strongly affect wave shape and quality."
+        },
+        {
+            "text": "Why is it important to avoid dropping in on another surfer?",
+            "options": [
+                  "It can cause a collision and breaks surf etiquette",
+                  "It makes the board heavier",
+                  "It stops the tide",
+                  "It changes the weather"
+            ],
+            "answer": "It can cause a collision and breaks surf etiquette",
+            "explanation": "Dropping in means taking a wave when another surfer has priority and can create a dangerous situation."
+        },
+        {
+            "text": "What is a surf break?",
+            "options": [
+                "A place where waves break and can be surfed",
+                "A type of wetsuit",
+                 "A surfing competition prize",
+                 "A piece of surfboard equipment"
+            ],
+            "answer": "A place where waves break and can be surfed",
+            "explanation": "A surf break is a location where waves break in a way that can allow surfing."
+        }
+        {
+            "text": "Why might a surfer wear a wetsuit in Southland?",
+            "options": [
+                "To help keep warm in cooler water",
+                "To make the waves bigger",
+                "To improve the tide",
+                "To make the surfboard faster"
+            ],
+            "answer": "To help keep warm in cooler water",
+            "explanation": "A wetsuit helps reduce heat loss when surfing in colder water."
+        },
+        {
+            "text": "Which action shows good surf etiquette?",
+            "options": [
+                "Waiting your turn for a wave",
+                "Taking every wave from others",
+                "Paddling directly into another surfer",
+                "Ignoring surfers with priority"
+            ],
+                        "answer": "Waiting your turn for a wave",
+            "explanation": "Taking turns and respecting priority helps keep the lineup safer and fairer."
+        }
+    ],
+
+    "Advanced": [
+         {
+            "text": "Why is learning about the history of surfing in Southland useful?",
+            "options": [
+                "It helps users understand the local surfing culture and its development",
+                "It changes the tides",
+                "It makes waves larger",
+                "It replaces the need for surf safety"
+            ],
+              "answer": "It helps users understand the local surfing culture and its development",
+            "explanation": "Learning local surfing history gives users more context about the sport and surfing community in Southland."
+        },
+        {
+              "text": "What does 'swell' refer to in surfing?",
+            "options": [
+                "A series of waves travelling across the ocean",
+                "The colour of the ocean",
+                "The length of a surfboard",
+                "The temperature of the sand"
+            ],
+            "answer": "A series of waves travelling across the ocean",
+            "explanation": "Swell is organised wave energy travelling through the ocean."
+        },
