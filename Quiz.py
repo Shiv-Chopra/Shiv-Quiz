@@ -69,5 +69,3 @@ questions = [
         ],
         "correct": "Keeping a surfer warm"
     },
-
-     
