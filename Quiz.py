@@ -31,7 +31,7 @@ from tkinter import messagebox
 # correct - the correct answer
 
 
-questions = [
+QUESTIONS = [
      # LEVEL 1 - BEGINNER
         {
             "level": "BEGINNER",
@@ -69,7 +69,7 @@ questions = [
             "correct": "Keeping a surfer warm"
         },
     
-        "Intermediate": [
+        Intermediate = [
             { 
                 "text": "Which factor can affect the quality of waves at a surf break?",
                 "options": [
@@ -92,6 +92,7 @@ questions = [
                 "answer": "It can cause a collision and breaks surf etiquette",
                 "explanation": "Dropping in means taking a wave when another surfer has priority and can create a dangerous situation."
             },
+
             {
                 "text": "What is a surf break?",
                 "options": [
@@ -102,7 +103,7 @@ questions = [
                 ],
                 "answer": "A place where waves break and can be surfed",
                 "explanation": "A surf break is a location where waves break in a way that can allow surfing."
-            }
+            },
             {
                 "text": "Why might a surfer wear a wetsuit in Southland?",
                 "options": [
@@ -127,7 +128,7 @@ questions = [
             }
         ],
     
-        "Advanced": [
+        Advanced = [
              {
                 "text": "Why is learning about the history of surfing in Southland useful?",
                 "options": [
@@ -186,6 +187,33 @@ questions = [
         ]
    
 ]
+
+# Game Settings 
+# This shows the time limit and how many points you get for each correct question
+TIME_LIMIT = 15
+POINTS_PER_CORRECT = 10
+
+# Game Variables
+CURRENT_LEVEL = ""
+CURRENT_QUESTIONS = []
+CURRENT_INDEX = 0
+SCORE = 0
+TIME_LEFT = TIME_LIMIT
+TIMER_ID = None
+ANSWERED = False
+
+# --------------------------------------------------------------
+# Create main window
+# --------------------------------------------------------------
+
+ROOT = tk.Tk()
+ROOT.title(Southland Surfing Quiz)
+
+
+
+
+
+
 
    
 
