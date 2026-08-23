@@ -32,8 +32,8 @@ from tkinter import messagebox
 
 
 QUESTIONS = [
-     # LEVEL 1 - BEGINNER
-        {
+   # LEVEL 1 - BEGINNER
+            BEGINNER = {
             "level": "BEGINNER",
             "question": "What piece of equipment keeps a surfer attached to their board?",
             "answers": [
@@ -69,7 +69,7 @@ QUESTIONS = [
             "correct": "Keeping a surfer warm"
         },
     
-        Intermediate = [
+        INTERMEDIATE = [
             { 
                 "text": "Which factor can affect the quality of waves at a surf break?",
                 "options": [
@@ -92,7 +92,6 @@ QUESTIONS = [
                 "answer": "It can cause a collision and breaks surf etiquette",
                 "explanation": "Dropping in means taking a wave when another surfer has priority and can create a dangerous situation."
             },
-
             {
                 "text": "What is a surf break?",
                 "options": [
@@ -128,7 +127,7 @@ QUESTIONS = [
             }
         ],
     
-        Advanced = [
+        ADVANCED = [
              {
                 "text": "Why is learning about the history of surfing in Southland useful?",
                 "options": [
