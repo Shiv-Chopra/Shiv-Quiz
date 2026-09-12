@@ -268,4 +268,145 @@ def start_quiz(level):
     score = 0
 
     show_question()
-    
+
+# --------------------------------------------------------------
+# Show question
+# --------------------------------------------------------------
+
+def show_question():
+    """Display the current question."""
+    global time_left
+    global answered
+
+    clear_screen()
+
+    answered = False
+
+    q = current_questions[current_index]
+
+# Top information
+    top = ttk.Frame(main)
+    top.pack(fill="x", pady=(0, 15))
+
+    progress_label = ttk.Label(
+        top,
+        text=(
+            f"{current_level}  |  "
+            f"Question {current_index + 1} of {len(current_questions)}"
+        ),
+        font=("Segoe UI", 11, "bold")
+    )
+    progress_label.pack(side="left")
+
+    score_label = ttk.Label(
+        top,
+        text=f"Score: {score}",
+        font=("Segoe UI", 11, "bold")
+    )
+
+# Progress bar
+    progress = ttk.Progressbar(
+        main,
+        length=600,
+        mode="determinate",
+        maximum=len(current_questions),
+        value=current_index
+    )
+    progress.pack(fill="x", pady=(0, 25))
+
+# Timer
+    timer_label = ttk.Label(
+        main,
+        text="Time: 15",
+        font=("Segoe UI", 13, "bold")
+    )
+    timer_label.pack(pady=(0, 15))
+
+ # Question
+    question_label = ttk.Label(
+        main,
+        text=q["text"],
+        wraplength=650,
+        justify="center",
+        anchor="center",
+        font=("Segoe UI", 16, "bold")
+    )
+    question_label.pack(
+        fill="x",
+        pady=(5, 25)
+    )
+
+# Selected answer
+    selected_answer = tk.StringVar(value="")
+
+ # Answer buttons
+    options_frame = ttk.Frame(main)
+    options_frame.pack(
+        fill="x",
+        padx=70
+    )
+
+    option_buttons = []
+
+    for option in q["options"]:
+
+        rb = ttk.Radiobutton(
+            options_frame,
+            text=option,
+            value=option,
+            variable=selected_answer
+        )
+
+        rb.pack(
+            anchor="w",
+            pady=7
+        )
+
+        option_buttons.append(rb)
+
+# Feedback
+    feedback_label = ttk.Label(
+        main,
+        text="",
+        wraplength=650,
+        justify="center",
+        font=("Segoe UI", 11, "bold")
+    )
+    feedback_label.pack(pady=15)
+
+# Buttons
+    buttons = ttk.Frame(main)
+    buttons.pack(
+        fill="x",
+        pady=5
+    )
+
+    submit_btn = ttk.Button(
+        buttons,
+        text="Submit Answer"
+    )
+    submit_btn.pack(side="left")
+
+    next_btn = ttk.Button(
+        buttons,
+        text="Next Question",
+        state="disabled"
+    )
+    next_btn.pack(
+        side="left",
+        padx=10
+    )
+
+    home_btn = ttk.Button(
+        buttons,
+        text="Quit to Menu",
+        command=show_welcome
+    )
+    home_btn.pack(side="right")
+
+
+
+
+
+
+
