@@ -17,8 +17,8 @@
 # Players receive 10 points for each correct answer.
 
 import tkinter as tk
-from tkinter import messagebox
-
+from tkinter import ttk, messagebox
+import random
 # ------------------------------------------
 # Quiz Questions
 # ------------------------------------------
@@ -178,3 +178,94 @@ ADVANCED = [
         "explanation": "Local knowledge can help surfers recognise hazards, conditions and appropriate places to surf."
     }
 ]
+
+# Game Settings 
+# This shows the time limit and how many points you get for each correct question
+TIME_LIMIT = 15
+POINTS_PER_CORRECT = 10
+
+# Game Variables
+CURRENT_LEVEL = ""
+CURRENT_QUESTIONS = []
+CURRENT_INDEX = 0
+SCORE = 0
+TIME_LEFT = TIME_LIMIT
+TIMER_ID = None
+ANSWERED = False
+
+# --------------------------------------------------------------
+# Create main window
+# --------------------------------------------------------------
+root = tk.Tk()
+root.title("SOUTHLAND SURFING QUIZ")
+root.geometry("760x600")
+style = ttk.Style()
+
+try:
+    style.theme_use("clam")
+except tk.TclError:
+    pass
+
+main = ttk.Frame(root, padding=25)
+main.pack(fill="both", expand=True)
+
+# --------------------------------------------------------------
+# General functions
+# --------------------------------------------------------------
+def clear_screen():
+    """Remove everything from the current screen."""
+    for widget in main.winfo_children():
+        widget.destroy()
+def show_welcome():
+    """Display the welcome and difficulty selection screen."""
+
+    global timer_id
+    if timer_id is not None:
+        root.after_cancel(timer_id)
+        timer_id = None
+
+    clear_screen()
+
+    title = ttk.Label(
+        main,
+        text="🌊 Southland Surfing Quiz",
+        font=("Segoe UI", 24, "bold")
+    )
+    title.pack(pady=(20, 10))
+    intro = ttk.Label(
+        main,
+        text=(
+            "Test your surfing knowledge and learn more about surfing in Southland.\n\n"
+            "Choose a difficulty level to begin. Each correct answer is worth 10 points.\n"
+            "You will have 15 seconds to answer each question."
+                ),
+        justify="center",
+        wraplength=620,
+        font=("Segoe UI", 12)
+    )
+    intro.pack(pady=15)
+
+# --------------------------------------------------------------
+# Start quiz
+# --------------------------------------------------------------
+
+def start_quiz(level):
+    """Start the selected difficulty level."""
+    global current_level
+    global current_questions
+    global current_index
+    global score
+
+    current_level = level
+
+    # Make a copy so the original question list stays unchanged
+    current_questions = questions[level].copy()
+
+    # Randomise question order
+    random.shuffle(current_questions)
+
+    current_index = 0
+    score = 0
+
+    show_question()
+    
