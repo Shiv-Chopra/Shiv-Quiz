@@ -20,5 +20,28 @@ QUESTION_BANK = {
         ("What should you do before paddling out?", ["Watch the waves and other surfers", "Rush straight into the lineup", "Leave your board on the sand", "Ignore the conditions"],
           "Watch the waves and other surfers", "A quick observation helps you choose a safer path through the waves."),
     ],
-    
+    "INTERMEDIATE": [
+        ("Which factor can affect wave quality at a surf break?", ["Wind direction and swell", "The colour of the surfboard", "The surfer's shoes", "The time shown on a phone"],
+          "Wind direction and swell", "Swell and wind strongly affect wave size, shape and cleanliness."),
+        ("Why is it important to avoid dropping in on another surfer?", ["It can cause a collision and breaks surf etiquette", "It makes the board heavier", "It stops the tide", "It changes the weather"],
+          "It can cause a collision and breaks surf etiquette", "The surfer closest to the breaking part of the wave has priority."),
+        ("What is a surf break?", ["A place where waves break and can be surfed", "A type of wetsuit", "A competition prize", "A piece of surfboard equipment"],
+          "A place where waves break and can be surfed", "A surf break is a location where waves form in a surfable way."),
+        ("Which action shows good surf etiquette?", ["Waiting your turn for a wave", "Taking every wave from others", "Paddling into another surfer", "Ignoring surfers with priority"],
+          "Waiting your turn for a wave", "Taking turns makes the lineup safer and fairer."),
+        ("What should you do if caught in a rip current?", ["Stay calm and signal for help", "Fight it by swimming straight in", "Dive under it", "Take off your leash"],
+          "Stay calm and signal for help", "Stay calm, float, and raise an arm to signal for help."),
+    ],
+
+    "ADVANCED": [
+        ("What does 'swell' refer to in surfing?", ["A series of waves travelling across the ocean", "The colour of the ocean", "The length of a surfboard", "The temperature of the sand"],
+          "A series of waves travelling across the ocean", "Swell is organised wave energy travelling through the ocean."),
+        ("Why can wind direction be important to surfers?", ["It can change the shape and quality of waves", "It determines surfboard colour", "It changes a surfer's height", "It controls wetsuit cost"],
+          "It can change the shape and quality of waves", "Offshore winds can make waves cleaner; onshore winds often make surf choppy."),
+        ("Which behaviour is most responsible in a crowded lineup?", ["Observe and wait for a safe opportunity", "Paddle straight through everyone", "Take every available wave", "Ignore other surfers"],
+          "Observe and wait for a safe opportunity", "Watch the pattern first so you do not interfere with surfers riding waves."),
+         ("Why understand local conditions at an unfamiliar break?", ["Different breaks have different hazards and wave behaviour", "All surf breaks are exactly the same", "It guarantees perfect waves", "It removes the need for safety equipment"],
+           "Different breaks have different hazards and wave behaviour", "Local conditions may include rips, rocks, currents and changing weather."),
+        ("Why is learning Southland surfing history useful?", ["It builds understanding of local surf culture", "It changes the tides", "It makes waves larger", "It replaces safety knowledge"], "It builds understanding of local surf culture", "History gives context about the people and places that shape a surfing community."),
+    ],
 }
