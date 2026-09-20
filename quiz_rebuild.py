@@ -224,5 +224,23 @@ def next_question(self):
         else:
             self.show_question()
 
+def show_results(self):
+        self.clear()
+        page = self.page()
+        self.brand(page)
+        total = len(self.questions) * POINTS_PER_CORRECT
+        percentage = round(self.score / total * 100)
+        message = "Epic session - strong surf smarts." if percentage >= 80 else "Solid session - keep building your coast knowledge." if percentage >= 50 else "Every surfer starts somewhere. Give it another paddle out."
+        ttk.Label(page, text="Session complete", style="Title.TLabel").pack(anchor="w", pady=(28, 5))
+        ttk.Label(page, text=message, style="Sub.TLabel").pack(anchor="w")
+        card = ttk.Frame(page, style="Card.TFrame", padding=30)
+        card.pack(fill="x", pady=32)
+        ttk.Label(card, text=f"{self.score} / {total}", style="Question.TLabel", font=("Segoe UI", 34, "bold")).pack(anchor="w")
+        ttk.Label(card, text=f"{percentage}% correct  |  {self.level.title()} session", style="Body.TLabel").pack(anchor="w", pady=(2, 22))
+        ttk.Button(card, text="RIDE AGAIN", style="Next.TButton", command=lambda: self.start_quiz(self.level)).pack(side="left")
+        ttk.Button(card, text="CHOOSE LEVEL", style="Level.TButton", command=self.show_welcome).pack(side="left", padx=10)
+        self.wave_footer(page)
+
+
 
     
