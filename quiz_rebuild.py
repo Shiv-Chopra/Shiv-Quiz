@@ -181,5 +181,15 @@ def tick(self):
         self.time_left -= 1
         self.timer_id = self.root.after(1000, self.tick)
 
+def select_answer(self, selected):
+        """Highlight an option without submitting it, allowing a player to change their mind."""
+        if self.answered:
+            return
+        self.selected_answer = selected
+        for button, choice in self.choice_buttons:
+            button.configure(style="Selected.Answer.TButton" if choice == selected else "Answer.TButton")
+        self.feedback_label.configure(text="Answer selected. Press Confirm Answer when you're ready.")
+        self.confirm_button.state(["!disabled"])
+
 
     
