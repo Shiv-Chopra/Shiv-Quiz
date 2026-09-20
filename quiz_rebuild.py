@@ -70,4 +70,22 @@ def __init__(self, root):
     self.show_welcome()
 
 def setup_styles(self):
-    
+    style = ttk.Style()
+    style.theme_use("clam")
+    style.configure("Page.TFrame", background=self.FOAM)
+    style.configure("Card.TFrame", background="white")
+    style.configure("Title.TLabel", background=self.FOAM, foreground=self.NAVY, font=("Segoe UI", 28, "bold"))
+    style.configure("Sub.TLabel", background=self.FOAM, foreground="#39717D", font=("Segoe UI", 11))
+    style.configure("Question.TLabel", background="white", foreground=self.INK, font=("Segoe UI", 18, "bold"))
+    style.configure("Body.TLabel", background="white", foreground="#41636B", font=("Segoe UI", 11))
+    style.configure("Level.TButton", font=("Segoe UI", 13, "bold"), padding=(22, 13), foreground="white", background=self.DEEP_BLUE, borderwidth=0)
+    style.map("Level.TButton", background=[("active", self.OCEAN)])
+    style.configure("Answer.TButton", font=("Segoe UI", 12), padding=(16, 14), foreground=self.INK, background="#EDF7F6", borderwidth=0)
+    style.map("Answer.TButton", background=[("active", "#D6F0EC")])
+    style.configure("Selected.Answer.TButton", font=("Segoe UI", 12, "bold"), padding=(16, 14), foreground="white", background=self.OCEAN, borderwidth=0)
+    style.configure("Next.TButton", font=("Segoe UI", 12, "bold"), padding=(20, 11), foreground="white", background=self.DEEP_BLUE, borderwidth=0)
+    style.map("Next.TButton", background=[("active", self.OCEAN)])
+    style.configure("Correct.Answer.TButton", font=("Segoe UI", 12, "bold"), padding=(16, 14), foreground="white", background="#2A9D8F", borderwidth=0)
+    style.configure("Wrong.Answer.TButton", font=("Segoe UI", 12), padding=(16, 14), foreground="white", background=self.CORAL, borderwidth=0)
+
+  
