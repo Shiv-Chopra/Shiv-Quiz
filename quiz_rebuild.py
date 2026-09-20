@@ -191,5 +191,31 @@ def select_answer(self, selected):
         self.feedback_label.configure(text="Answer selected. Press Confirm Answer when you're ready.")
         self.confirm_button.state(["!disabled"])
 
+def confirm_answer(self):
+        """Submit the currently selected option."""
+        if self.selected_answer is not None:
+            self.check_answer(self.selected_answer)
+
+def check_answer(self, selected):
+        if self.answered:
+            return
+        self.answered = True
+        self.cancel_timer()
+        self.confirm_button.state(["disabled"])
+        correct = selected == self.correct_answer
+        if correct:
+            self.score += POINTS_PER_CORRECT
+            self.score_label.configure(text=f"SCORE  {self.score:02d}")
+        for button, choice in self.choice_buttons:
+            button.state(["disabled"])
+            if choice == self.correct_answer:
+                button.configure(style="Correct.Answer.TButton")
+            elif choice == selected:
+                button.configure(style="Wrong.Answer.TButton")
+        self.timer_label.configure(text="+10" if correct else "TIME")
+        prefix = "Nice line! " if correct else ("Time's up. " if selected is None else "Not quite. ")
+        self.feedback_label.configure(text=prefix + self.explanation)
+        self.next_button.state(["!disabled"])
+
 
     
