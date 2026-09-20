@@ -217,5 +217,12 @@ def check_answer(self, selected):
         self.feedback_label.configure(text=prefix + self.explanation)
         self.next_button.state(["!disabled"])
 
+def next_question(self):
+        self.index += 1
+        if self.index == len(self.questions):
+            self.show_results()
+        else:
+            self.show_question()
+
 
     
