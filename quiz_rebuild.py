@@ -130,3 +130,12 @@ def show_welcome(self):
             ttk.Label(row, text=description, style="Body.TLabel").pack(side="left", padx=16)
     self.wave_footer(page)
 
+def start_quiz(self, level):
+    self.level = level
+    self.questions = list(QUESTION_BANK[level])
+    random.shuffle(self.questions)
+    self.index = self.score = 0
+    self.show_question()
+
+def show_question(self):
+    
