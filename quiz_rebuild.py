@@ -241,6 +241,9 @@ def show_results(self):
         ttk.Button(card, text="CHOOSE LEVEL", style="Level.TButton", command=self.show_welcome).pack(side="left", padx=10)
         self.wave_footer(page)
 
-
+if __name__ == "__main__":
+    app_root = tk.Tk()
+    SurfQuiz(app_root)
+    app_root.mainloop()
 
     
