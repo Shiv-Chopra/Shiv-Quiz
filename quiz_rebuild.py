@@ -88,4 +88,14 @@ def setup_styles(self):
     style.configure("Correct.Answer.TButton", font=("Segoe UI", 12, "bold"), padding=(16, 14), foreground="white", background="#2A9D8F", borderwidth=0)
     style.configure("Wrong.Answer.TButton", font=("Segoe UI", 12), padding=(16, 14), foreground="white", background=self.CORAL, borderwidth=0)
 
+def cancel_timer(self):
+    if self.timer_id is not None:
+        self.root.after_cancel(self.timer_id)
+        self.timer_id = None
+
+def clear(self):
+    self.cancel_timer()
+    for widget in self.root.winfo_children():
+        widget.destroy()
+
   
