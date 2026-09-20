@@ -172,4 +172,14 @@ def show_question(self):
     self.next_button.pack(side="right")
     self.next_button.state(["disabled"])
     self.tick()
+
+def tick(self):
+        self.timer_label.configure(text=f"{self.time_left}s")
+        if self.time_left <= 0:
+            self.check_answer(None)
+            return
+        self.time_left -= 1
+        self.timer_id = self.root.after(1000, self.tick)
+
+
     
