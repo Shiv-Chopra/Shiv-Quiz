@@ -138,4 +138,38 @@ def start_quiz(self, level):
     self.show_question()
 
 def show_question(self):
+    self.clear()
+    self.answered, self.time_left, self.selected_answer = False, TIME_LIMIT, None
+    page = self.page()
+    top = ttk.Frame(page, style="Page.TFrame")
+    top.pack(fill="x")
+    ttk.Label(top, text=f"{self.level.title()} session", style="Sub.TLabel").pack(side="left")
+    self.score_label = ttk.Label(top, text=f"SCORE  {self.score:02d}", style="Sub.TLabel")
+    self.score_label.pack(side="right")
+    ttk.Progressbar(page, maximum=len(self.questions), value=self.index).pack(fill="x", pady=(15, 18))
+    ttk.Label(page, text=f"QUESTION {self.index + 1} OF {len(self.questions)}", style="Sub.TLabel").pack(anchor="w")
+    card = ttk.Frame(page, style="Card.TFrame", padding=30)
+    card.pack(fill="both", expand=True, pady=(10, 0))
+    question, options, self.correct_answer, self.explanation = self.questions[self.index]
+    ttk.Label(card, text=question, style="Question.TLabel", wraplength=700, justify="left").pack(anchor="w", pady=(0, 20))
+    choices = list(options)
+    random.shuffle(choices)
+    self.choice_buttons = []
+    for number, choice in enumerate(choices):
+            button = ttk.Button(card, text=f"{chr(65 + number)}   {choice}", style="Answer.TButton", command=lambda selected=choice: self.select_answer(selected))
+            button.pack(fill="x", pady=5)
+            self.choice_buttons.append((button, choice))
+    bottom = ttk.Frame(card, style="Card.TFrame")
+    bottom.pack(fill="x", pady=(20, 0))
+    self.timer_label = ttk.Label(bottom, text="15s", style="Question.TLabel")
+    self.timer_label.pack(side="left")
+    self.feedback_label = ttk.Label(bottom, text="Choose an answer, then confirm it.", style="Body.TLabel", wraplength=300)
+    self.feedback_label.pack(side="left", padx=12)
+    self.confirm_button = ttk.Button(bottom, text="CONFIRM ANSWER", style="Next.TButton", command=self.confirm_answer)
+    self.confirm_button.pack(side="right", padx=(8, 0))
+    self.confirm_button.state(["disabled"])
+    self.next_button = ttk.Button(bottom, text="NEXT WAVE  >", style="Next.TButton", command=self.next_question)
+    self.next_button.pack(side="right")
+    self.next_button.state(["disabled"])
+    self.tick()
     
