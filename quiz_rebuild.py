@@ -107,3 +107,9 @@ def brand(self, parent):
      tk.Label(parent, text="SOUTHLAND  /  AOTEAROA", bg=self.FOAM, fg=self.OCEAN, font=("Segoe UI", 10, "bold")).pack(anchor="w")
      tk.Label(parent, text="SURF SMART", bg=self.FOAM, fg=self.NAVY, font=("Segoe UI", 28, "bold")).pack(anchor="w", pady=(2, 0))
 
+def wave_footer(self, parent):
+    canvas = tk.Canvas(parent, height=80, bg=self.FOAM, highlightthickness=0)
+    canvas.pack(fill="x", side="bottom", pady=(10, 0))
+    for left, colour in [(-100, self.OCEAN), (160, self.DEEP_BLUE), (440, self.OCEAN), (720, self.DEEP_BLUE)]:
+        canvas.create_arc(left, 0, left + 360, 150, start=185, extent=175, fill=colour, outline=colour)
+
