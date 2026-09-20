@@ -45,3 +45,29 @@ QUESTION_BANK = {
         ("Why is learning Southland surfing history useful?", ["It builds understanding of local surf culture", "It changes the tides", "It makes waves larger", "It replaces safety knowledge"], "It builds understanding of local surf culture", "History gives context about the people and places that shape a surfing community."),
     ],
 }
+
+class SurfQuiz:
+    """Application controller for the quiz screens and timer."""
+
+NAVY, DEEP_BLUE, OCEAN = "#073B4C", "#055A7A", "#0B9CB5"
+FOAM, CORAL, INK = "#F4FBFA", "#E9674A", "#12343B"
+
+def __init__(self, root):
+    self.root = root
+    root.title("Southland Surfing Quiz")
+    root.geometry("900x680")
+    root.minsize(760, 600)
+    root.configure(bg=self.NAVY)
+    self.level = ""
+    self.questions = []
+    self.index = self.score = 0
+    self.time_left = TIME_LIMIT
+    self.timer_id = None
+    self.answered = False
+    self.selected_answer = None
+    self.choice_buttons = []
+    self.setup_styles()
+    self.show_welcome()
+
+def setup_styles(self):
+    
