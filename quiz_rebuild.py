@@ -113,3 +113,20 @@ def wave_footer(self, parent):
     for left, colour in [(-100, self.OCEAN), (160, self.DEEP_BLUE), (440, self.OCEAN), (720, self.DEEP_BLUE)]:
         canvas.create_arc(left, 0, left + 360, 150, start=185, extent=175, fill=colour, outline=colour)
 
+def show_welcome(self):
+    self.clear()
+    page = self.page()
+    self.brand(page)
+    ttk.Label(page, text="Know the coast. Ride with confidence.", style="Title.TLabel").pack(anchor="w", pady=(25, 5))
+    ttk.Label(page, text="A quick Southland surfing quiz covering safety, conditions and lineup etiquette.", style="Sub.TLabel").pack(anchor="w")
+    card = ttk.Frame(page, style="Card.TFrame", padding=28)
+    card.pack(fill="x", pady=(32, 22))
+    ttk.Label(card, text="Choose your session", style="Question.TLabel").pack(anchor="w")
+    ttk.Label(card, text="Five questions. Ten points for each correct answer. Fifteen seconds per question.", style="Body.TLabel", wraplength=680).pack(anchor="w", pady=(7, 20))
+    for level, description in [("BEGINNER", "Start with surf essentials"), ("INTERMEDIATE", "Test safety and etiquette"), ("ADVANCED", "Read the conditions")]:
+            row = ttk.Frame(card, style="Card.TFrame")
+            row.pack(fill="x", pady=5)
+            ttk.Button(row, text=level.title(), style="Level.TButton", command=lambda selected=level: self.start_quiz(selected)).pack(side="left")
+            ttk.Label(row, text=description, style="Body.TLabel").pack(side="left", padx=16)
+    self.wave_footer(page)
+
