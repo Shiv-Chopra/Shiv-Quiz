@@ -102,3 +102,8 @@ def page(self):
     page = ttk.Frame(self.root, style="Page.TFrame", padding=(52, 32))
     page.pack(fill="both", expand=True)
     return page
+
+def brand(self, parent):
+     tk.Label(parent, text="SOUTHLAND  /  AOTEAROA", bg=self.FOAM, fg=self.OCEAN, font=("Segoe UI", 10, "bold")).pack(anchor="w")
+     tk.Label(parent, text="SURF SMART", bg=self.FOAM, fg=self.NAVY, font=("Segoe UI", 28, "bold")).pack(anchor="w", pady=(2, 0))
+
