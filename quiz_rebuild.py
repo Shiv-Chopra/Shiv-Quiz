@@ -98,4 +98,7 @@ def clear(self):
     for widget in self.root.winfo_children():
         widget.destroy()
 
-  
+def page(self):
+    page = ttk.Frame(self.root, style="Page.TFrame", padding=(52, 32))
+    page.pack(fill="both", expand=True)
+    return page
